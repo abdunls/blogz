@@ -1,0 +1,33 @@
+{% extends "base.html" %} 
+
+{% block content %}
+<h1>Build a Blog</h1>
+
+<form action="/blog" method ="POST">
+    <style>
+      label {
+          margin-bottom: 5px;
+          display: block;
+          font-size: 18px;
+          }
+      body {
+          padding: 50px;
+          }
+    </style>
+
+    {% if blogs|length == 0 %}
+        
+        <p>No blog entries yet</p>
+        
+        {% else %} 
+        <ul>
+        {% for blog in blogs %}
+            <h2><a href="blog?id={{blog.id}}">{{blog.title}}</a></h2>
+            <p>{{blog.body}}</p>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+{% endblock %}
+
+

@@ -1,0 +1,55 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<h2>Add New Blog Entry</h2>
+
+ <form action="/newpost" method ="POST">
+   <style>
+     label {
+         margin-bottom: 5px;
+         display: block;
+         font-size: 18px;
+         }
+     body {
+         padding: 50px;
+         }
+     form {
+         padding: 20px;
+         margin: 0 auto;
+         width: 540px;
+         font: 16px sans-serif;
+         border-radius: 10px;
+         }
+     button {
+         font-size: 16px;
+         padding: 10px 20px;
+         border: none;
+         background-color: rgb(14, 199, 199);
+         color: white;
+         transition: background-color 250ms;
+         }
+     .error {color: red;}
+   </style>
+   
+   <label>
+     Entry Title:
+     <br></br>
+     <input type = "text" id = 'blog_title' name = "blog_title" />
+     
+   </label>
+   <p class="error">{{ title_error_render }}</p>
+   
+   
+   <p>Your New Blog:</p>
+   <textarea id = 'blog_body' name = "blog_body"></textarea>
+   <p class="error">{{ body_error_render }}</p>
+   
+   <input type = "submit" value='Post new entry'/>
+ </form>
+
+ {% if error %}
+   <p class='error'>{{ error }}</p>
+ {% endif %}
+
+{% endblock %}

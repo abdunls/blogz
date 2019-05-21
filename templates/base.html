@@ -1,0 +1,27 @@
+<a href="http://127.0.0.1:5000/">Main Blog Page</a>
+<a href="http://127.0.0.1:5000/newpost">Add a New Entry</a>
+    
+<!DOCTYPE html>        
+<html>
+    <head>
+        <title>{{title}}</title>
+        <style type="text/css">
+            .error {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+            {% block content %}
+            {% for blog in blogs %}
+                <h2>{{blog.title}}</h2>
+                <p>{{blog.body}}</p>
+            {% endfor %}
+            {% endblock %}
+    </body>
+</html>
+
+ 
+
+
+
