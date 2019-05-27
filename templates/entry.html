@@ -4,9 +4,12 @@
 
 
 {% for blog in blogs %}
-   <h2>{{blog.title}}</h2>
-   <p>{{blog.body}}</p>
+    <div>
+        <h2>{{blog.title}}</h2>
+        <p>{{blog.body}}</p>
+    </div>
+   
 {% endfor %}
-
+    
 
 {% endblock %}

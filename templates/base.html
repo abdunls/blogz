@@ -1,5 +1,4 @@
-<a href="http://127.0.0.1:5000/">Main Blog Page</a>
-<a href="http://127.0.0.1:5000/newpost">Add a New Entry</a>
+
     
 <!DOCTYPE html>        
 <html>
@@ -12,6 +11,14 @@
         </style>
     </head>
     <body>
+        <div class="topnav">
+                <a href="/">Home</a>
+                <a href="/newpost">New Post</a>
+                <a href="/blog">Blog</a>
+                <a href="/login">Log In</a>
+                <a href="/signup">Sign Up</a>
+                <a href="/logout">Log Out</a>
+            </div>
             {% block content %}
             {% for blog in blogs %}
                 <h2>{{blog.title}}</h2>
