@@ -178,9 +178,7 @@ def something():
             db.session.commit() 
             id = str(new_blog.id)
 
-        print("This is the new blog id: " + str(new_blog.id))
-
-        return redirect('/blog?id=' + str(new_blog.id)) 
+        return redirect('/blog?id=' + id) 
         
     blogs = Blog.query.filter_by(owner=owner).all()
     return render_template('newpost.html', title="Add a new post", blogs=blogs, blog_title="", blog_body="")
